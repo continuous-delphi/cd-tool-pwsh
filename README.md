@@ -1,8 +1,9 @@
 # Continuous-Delphi PowerShell Tools
 
+[![CI](https://github.com/continuous-delphi/cd-tool-pwsh/actions/workflows/ci.yml/badge.svg)](https://github.com/continuous-delphi/cd-tool-pwsh/actions/workflows/ci.yml)
 ![Status](https://img.shields.io/badge/status-incubator-orange)
 ![License](https://img.shields.io/github/license/continuous-delphi/cd-tool-pwsh)
-![CI](https://github.com/continuous-delphi/cd-tool-pwsh/actions/workflows/ci.yml/badge.svg)
+![PowerShell](https://img.shields.io/badge/PowerShell-7%2B-blue)
 ![Continuous Delphi](https://img.shields.io/badge/org-continuous--delphi-red)
 
 This repository contains PowerShell utilities used across the
@@ -82,7 +83,7 @@ Until a packaged distribution is provided, the module can be loaded
 directly from the repository:
 
 ``` powershell
-Import-Module ./ContinuousDelphi.Tools
+Import-Module ./src/ContinuousDelphi.Tools
 ```
 
 Once imported, the commands become available in the current session.
