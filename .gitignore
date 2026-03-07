@@ -1,0 +1,10 @@
+# PowerShell
+*.log
+*.psd1.lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
