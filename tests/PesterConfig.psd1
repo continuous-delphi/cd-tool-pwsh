@@ -1,6 +1,7 @@
 @{
     Run = @{
         Path = @(
+            './tests',
             './tests/Tools'
         )
         Exit = $false

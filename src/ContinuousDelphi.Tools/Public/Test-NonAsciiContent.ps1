@@ -242,7 +242,7 @@ function Test-NonAsciiContent {
                   $true
               )
 
-              while (($line = $reader.ReadLine()) -ne $null) {
+              while ($null -ne ($line = $reader.ReadLine())) {
                   $lineNumber++
 
                   if ([string]::IsNullOrEmpty($line)) {
