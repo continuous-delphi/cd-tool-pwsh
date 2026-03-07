@@ -6,7 +6,16 @@ All notable changes to this project will be documented in this file.
 The format is loosely based on Keep a Changelog (https://keepachangelog.com/en/1.1.0/)
 and this project follows Semantic Versioning.
 
+Example release
+```powershell
+pwsh .\tools\tag-release.cd-tool-pwsh.ps1 -Version 0.5.0 -WhatIf
+pwsh .\tools\tag-release.cd-tool-pwsh.ps1 -Version 0.5.0
+```
+
 ---
+
+## [0.6.0] Unreleased
+
 
 ## [0.5.0] - 2026-03-07
 
