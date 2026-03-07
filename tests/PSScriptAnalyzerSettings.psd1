@@ -12,11 +12,6 @@
 @{
   ExcludeRules = @(
 
-    # The approved-verb and singular-noun requirements
-    # apply to public module APIs, not private script helpers.
-    'PSUseApprovedVerbs'
-
-
     # [OutputType()] attributes on internal functions add no value here.
     # These functions are not part of a public API surface.
     'PSUseOutputTypeCorrectly'

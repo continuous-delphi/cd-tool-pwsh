@@ -65,7 +65,7 @@ Example:
 
 ### Recurse
 
-Optional switch to Search subdirectories recursively.
+Optional switch to search subdirectories recursively.
 
 Defaults to non-recursive search.
 
@@ -76,7 +76,7 @@ with a `FullName` property, such as those returned by `Get-ChildItem`.
 
 ### Quiet
 
-Optional switch to suppresses match output and returns a Boolean value.
+Optional switch that suppresses match output and returns a Boolean value.
 
 Returns:
 
