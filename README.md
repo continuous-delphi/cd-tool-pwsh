@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/continuous-delphi/cd-tool-pwsh/actions/workflows/ci.yml/badge.svg)](https://github.com/continuous-delphi/cd-tool-pwsh/actions/workflows/ci.yml)
 ![Status](https://img.shields.io/badge/status-incubator-orange)
+[![GitHub Release](https://img.shields.io/github/v/release/continuous-delphi/cd-tool-pwsh?display_name=release)](https://github.com/continuous-delphi/cd-tool-pwsh/releases)
 ![License](https://img.shields.io/github/license/continuous-delphi/cd-tool-pwsh)
 ![PowerShell](https://img.shields.io/badge/PowerShell-7%2B-blue)
 ![Continuous Delphi](https://img.shields.io/badge/org-continuous--delphi-red)
