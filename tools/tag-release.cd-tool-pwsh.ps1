@@ -117,7 +117,7 @@ if (-not (Test-Path -LiteralPath $changelogPath -PathType Leaf)) {
 }
 
 $changelogContent = Get-Content -LiteralPath $changelogPath -Raw -Encoding utf8
-if ($changelogContent -notmatch ("(?m)^## \[{0}\]\b" -f [regex]::Escape($Version))) {
+if ($changelogContent -notmatch ("(?m)^## \[{0}\]\s+-\s+\d{{4}}-\d{{2}}-\d{{2}}$" -f [regex]::Escape($Version))) {
     Fail "CHANGELOG.md does not contain a section header for [$Version]."
 }
 
