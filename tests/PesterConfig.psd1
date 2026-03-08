@@ -1,8 +1,7 @@
 @{
     Run = @{
         Path = @(
-            './tests',
-            './tests/Tools'
+            './tests'
         )
         Exit = $false
         PassThru = $true
