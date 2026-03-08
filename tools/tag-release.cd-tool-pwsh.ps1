@@ -1,4 +1,4 @@
-# tools/tag-release.ps1
+# tools/tag-release.cd-tool-pwsh.ps1
 # Creates and pushes a vX.Y.Z release tag for cd-tool-pwsh.
 # Requires: PowerShell 7+, git (on PATH)
 #

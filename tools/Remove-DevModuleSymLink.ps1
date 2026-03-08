@@ -5,8 +5,8 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 Write-Host ""
-Write-Host "ContinuousDelphi.Tools  remove_symlink"
-Write-Host "======================================="
+Write-Host "ContinuousDelphi.Tools  Remove-DevModuleSymLink.ps1"
+Write-Host "==================================================="
 Write-Host ""
 
 # PowerShell user module directory

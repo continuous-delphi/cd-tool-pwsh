@@ -50,7 +50,3 @@ pwsh .\tools\tag-release.cd-tool-pwsh.ps1 -Version 0.5.0
 ### Automation
 
 - GitHub Actions CI workflow for automated test execution on push and pull requests.
-
----
-
-[1.0.0]: https://github.com/continuous-delphi/cd-tool-pwsh/releases/tag/v1.0.0
