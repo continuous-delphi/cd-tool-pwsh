@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img width="200" height="200" alt="cd-tool-pwsh logo" src="https://github.com/user-attachments/assets/b5d9a3fd-1ace-4c5e-9ea1-c68aca5bdc7e" />
+</p>
+
 # Continuous-Delphi PowerShell Tools
 
 [![CI](https://github.com/continuous-delphi/cd-tool-pwsh/actions/workflows/ci.yml/badge.svg)](https://github.com/continuous-delphi/cd-tool-pwsh/actions/workflows/ci.yml)
