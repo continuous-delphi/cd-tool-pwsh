@@ -7,7 +7,6 @@
     CompanyName = 'Continuous-Delphi'
     Copyright = '(c) 2026 Continuous-Delphi'
     Description = 'PowerShell developer tools used across the Continuous-Delphi ecosystem.'
-
     PowerShellVersion = '7.0'
     CompatiblePSEditions = @('Core')
 
@@ -23,8 +22,10 @@
         PSData = @{
             Tags = @(
                 'continuous-delphi',
+                'delphi',
                 'powershell',
                 'pwsh',
+                'powershell-module',
                 'developer-tools',
                 'linting',
                 'ascii',
@@ -33,6 +34,7 @@
 
             ProjectUri = 'https://github.com/continuous-delphi/cd-tool-pwsh'
             LicenseUri = 'https://github.com/continuous-delphi/cd-tool-pwsh/blob/main/LICENSE'
+            ReleaseNotes = 'Initial public release of the ContinuousDelphi.Tools module with Test-NonAsciiContent.'
         }
     }
 }
