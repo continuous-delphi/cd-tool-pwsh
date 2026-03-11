@@ -11,7 +11,8 @@
     CompatiblePSEditions = @('Core')
 
     FunctionsToExport = @(
-        'Test-NonAsciiContent'
+        'Test-NonAsciiContent',
+        'Add-ToSystemPath'
     )
 
     CmdletsToExport = @()
