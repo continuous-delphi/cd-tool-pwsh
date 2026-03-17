@@ -34,7 +34,7 @@ function Add-ToSystemPath {
       return $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
   }
 
-  function Normalize-DirectoryPath {
+  function Format-DirectoryPath {
       param(
           [Parameter(Mandatory = $true)]
           [string]$Path
@@ -59,7 +59,7 @@ function Add-ToSystemPath {
       return $Path.Trim().TrimEnd('\').ToUpperInvariant()
   }
 
-  function Split-PathEntries {
+  function Split-PathEntry {
       param(
           [AllowNull()]
           [string]$PathValue
@@ -76,30 +76,35 @@ function Add-ToSystemPath {
   }
 
   function Update-CurrentSessionPath {
+      [CmdletBinding(SupportsShouldProcess)]
+      param()
+
       $machinePath = [Environment]::GetEnvironmentVariable('Path', 'Machine')
       $userPath = [Environment]::GetEnvironmentVariable('Path', 'User')
 
       $combined = @()
 
       if (-not [string]::IsNullOrWhiteSpace($machinePath)) {
-          $combined += Split-PathEntries -PathValue $machinePath
+          $combined += Split-PathEntry -PathValue $machinePath
       }
 
       if (-not [string]::IsNullOrWhiteSpace($userPath)) {
-          $combined += Split-PathEntries -PathValue $userPath
+          $combined += Split-PathEntry -PathValue $userPath
       }
 
-      $env:Path = ($combined -join ';')
+      if ($PSCmdlet.ShouldProcess('env:Path', 'Update')) {
+          $env:Path = ($combined -join ';')
+      }
   }
 
   if (-not (Test-IsAdministrator)) {
       throw 'Administrator privileges are required to modify the system PATH. Re-run PowerShell as Administrator.'
   }
 
-  $normalizedPathToAdd = Normalize-DirectoryPath -Path $PathToAdd
+  $normalizedPathToAdd = Format-DirectoryPath -Path $PathToAdd
 
   $currentMachinePath = [Environment]::GetEnvironmentVariable('Path', 'Machine')
-  $currentEntries = Split-PathEntries -PathValue $currentMachinePath
+  $currentEntries = Split-PathEntry -PathValue $currentMachinePath
 
   $existingKeys = @{}
   foreach ($entry in $currentEntries) {
@@ -109,10 +114,10 @@ function Add-ToSystemPath {
   $newKey = Get-NormalizedPathKey -Path $normalizedPathToAdd
 
   if ($existingKeys.ContainsKey($newKey)) {
-      Write-Host ''
-      Write-Host 'Path already exists in the system PATH:' -ForegroundColor Yellow
-      Write-Host "  $normalizedPathToAdd"
-      Write-Host ''
+      Write-Information ''
+      Write-Information 'Path already exists in the system PATH:'
+      Write-Information "  $normalizedPathToAdd"
+      Write-Information ''
       Update-CurrentSessionPath
       return
   }
@@ -127,14 +132,14 @@ function Add-ToSystemPath {
   [Environment]::SetEnvironmentVariable('Path', $newMachinePath, 'Machine')
   Update-CurrentSessionPath
 
-  Write-Host ''
-  Write-Host 'Added to system PATH:' -ForegroundColor Green
-  Write-Host "  $normalizedPathToAdd"
-  Write-Host ''
-  Write-Host 'The machine PATH has been updated.' -ForegroundColor Green
-  Write-Host 'The current PowerShell session PATH has also been refreshed.' -ForegroundColor Green
-  Write-Host ''
-  Write-Host 'New processes will see the updated PATH immediately.' -ForegroundColor White
-  Write-Host 'Some already-running applications may need to be restarted.' -ForegroundColor White
-  Write-Host ''
+  Write-Information ''
+  Write-Information 'Added to system PATH:'
+  Write-Information "  $normalizedPathToAdd"
+  Write-Information ''
+  Write-Information 'The machine PATH has been updated.'
+  Write-Information 'The current PowerShell session PATH has also been refreshed.'
+  Write-Information ''
+  Write-Information 'New processes will see the updated PATH immediately.'
+  Write-Information 'Some already-running applications may need to be restarted.'
+  Write-Information ''
 }

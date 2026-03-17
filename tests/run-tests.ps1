@@ -4,6 +4,10 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
+# PesterConfig.psd1 uses paths relative to the repo root, so ensure CWD is
+# the repo root regardless of where this script was invoked from.
+Set-Location (Split-Path $PSScriptRoot -Parent)
+
 $configPath = Join-Path $PSScriptRoot 'PesterConfig.psd1'
 
 Write-Host 'Running Pester tests...'
