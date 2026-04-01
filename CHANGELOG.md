@@ -16,6 +16,11 @@ pwsh .\tools\tag-release.cd-tool-pwsh.ps1 -Version 0.5.0
 
 ## [0.6.0] Unreleased
 
+### Added
+
+- `Set-FileLineEnding` command for normalizing repository text files to CRLF or LF line endings.
+- Default repository-oriented FileSpec set for `*.pas`, `*.dpr`, `*.inc`, and `*.ps1`.
+- Support for recursive searching, pipeline input, `-WhatIf`, and `-PassThru` result objects.
 
 ## [0.5.0] - 2026-03-07
 

@@ -1,6 +1,6 @@
 @{
     RootModule = 'ContinuousDelphi.Tools.psm1'
-    ModuleVersion = '0.5.0'
+    ModuleVersion = '0.6.0'
     GUID = '9e6d3f3e-6c6c-4b1c-9c7a-3c4d4c9a7b11'
 
     Author = 'Darian Miller'
@@ -12,7 +12,8 @@
 
     FunctionsToExport = @(
         'Test-NonAsciiContent',
-        'Add-ToSystemPath'
+        'Add-ToSystemPath',
+        'Set-FileLineEnding'
     )
 
     CmdletsToExport = @()
@@ -35,7 +36,7 @@
 
             ProjectUri = 'https://github.com/continuous-delphi/cd-tool-pwsh'
             LicenseUri = 'https://github.com/continuous-delphi/cd-tool-pwsh/blob/main/LICENSE'
-            ReleaseNotes = 'Initial public release of the ContinuousDelphi.Tools module with Test-NonAsciiContent.'
+            ReleaseNotes = 'Adds Set-FileLineEnding for normalizing repository text files to CRLF or LF line endings.'
         }
     }
 }

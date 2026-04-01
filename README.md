@@ -64,6 +64,42 @@ be filtered, exported, or inspected using standard PowerShell pipelines.
 
 ------------------------------------------------------------------------
 
+
+# Tools Included
+
+- `Test-NonAsciiContent` -- detects non-ASCII characters in repository files
+- `Set-FileLineEnding` -- normalizes repository text files to CRLF or LF line endings
+- `Add-ToSystemPath` -- adds a directory to the machine PATH when needed
+
+------------------------------------------------------------------------
+
+# Normalize line endings for Delphi repositories
+
+The module now includes:
+
+`Set-FileLineEnding`
+
+This command is intended for repository hygiene tasks such as normalizing
+Delphi and PowerShell source files to CRLF line endings before commit,
+release, or packaging.
+
+Default behavior:
+
+- searches recursively from the current directory
+- targets `*.pas`, `*.dpr`, `*.inc`, and `*.ps1`
+- normalizes line endings to `CRLF`
+- supports `-WhatIf` and pipeline input
+
+Example usage:
+
+``` powershell
+Set-FileLineEnding
+Set-FileLineEnding -Path . -FileSpec *.pas,*.dpr,*.inc,*.ps1
+Get-ChildItem -Path . -Filter *.ps1 -Recurse | Set-FileLineEnding -PassThru
+```
+
+------------------------------------------------------------------------
+
 # Repository Scope
 
 This repository will contain PowerShell tools that support the
