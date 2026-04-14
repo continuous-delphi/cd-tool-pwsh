@@ -1,6 +1,6 @@
 @{
     RootModule = 'ContinuousDelphi.Tools.psm1'
-    ModuleVersion = '0.6.0'
+    ModuleVersion = '0.7.0'
     GUID = '9e6d3f3e-6c6c-4b1c-9c7a-3c4d4c9a7b11'
 
     Author = 'Darian Miller'
@@ -13,6 +13,7 @@
     FunctionsToExport = @(
         'Test-NonAsciiContent',
         'Add-ToSystemPath',
+        'Invoke-TreeCommand',
         'Set-FileLineEnding'
     )
 
